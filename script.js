@@ -530,7 +530,7 @@ document.head.appendChild(shakeStyle);
    PRINT / RESUME DOWNLOAD FEEDBACK
    ==================================== */
 (function initResumeDownload() {
-  const btns = qsa('[download][href="resume.pdf"], #download-resume-btn');
+  const btns = qsa('[download][href="MADHAN_KUMAR_Resume.pdf"], #download-resume-btn');
 
   btns.forEach(btn => {
     btn.addEventListener('click', (e) => {

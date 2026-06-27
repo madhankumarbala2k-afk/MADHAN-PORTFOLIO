@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Madhan Kumar — Final Year AI &amp; ML Engineering Student | Aspiring AI/ML Engineer, Full Stack Developer &amp; Data Analyst. Explore my projects, skills, and experience." />
+  <meta name="keywords" content="Madhan Kumar, AI Engineer, ML Engineer, Full Stack Developer, Portfolio, Machine Learning, React, Python, JavaScript" />
+  <meta name="author" content="Madhan Kumar" />
+  <meta property="og:title" content="Madhan Kumar — AI/ML Engineer &amp; Full Stack Developer" />
+  <meta property="og:description" content="Final Year AI &amp; ML Engineering Student passionate about building intelligent applications and scalable web solutions." />
+  <meta property="og:type" content="website" />
+  <meta name="robots" content="index, follow" />
+  <title>Madhan Kumar — AI/ML Engineer &amp; Full Stack Developer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader" aria-hidden="true">
+  <div class="loader-logo">Madhan<span>.</span></div>
+  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+</div>
+
+<!-- Scroll Progress -->
+<div id="scroll-progress" role="progressbar" aria-label="Page scroll progress"></div>
+
+<!-- NAVIGATION -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-container">
+    <a href="#home" class="nav-logo" id="nav-logo">Madhan<span>.</span></a>
+    <ul class="nav-links" role="menubar">
+      <li><a href="#about" class="nav-link" role="menuitem">About</a></li>
+      <li><a href="#education" class="nav-link" role="menuitem">Education</a></li>
+      <li><a href="#skills" class="nav-link" role="menuitem">Skills</a></li>
+      <li><a href="#projects" class="nav-link" role="menuitem">Projects</a></li>
+      <li><a href="#certifications" class="nav-link" role="menuitem">Certs</a></li>
+      <li><a href="#contact" class="nav-link" role="menuitem">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+      <a href="resume.png" class="nav-resume-btn" download aria-label="Download Resume">
+        <i class="fas fa-download" aria-hidden="true"></i> Resume
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobile-nav" role="navigation" aria-label="Mobile navigation">
+  <a href="#about" class="nav-link">About</a>
+  <a href="#education" class="nav-link">Education</a>
+  <a href="#skills" class="nav-link">Skills</a>
+  <a href="#projects" class="nav-link">Projects</a>
+  <a href="#certifications" class="nav-link">Certifications</a>
+  <a href="#achievements" class="nav-link">Achievements</a>
+  <a href="#contact" class="nav-link">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="home" aria-label="Hero section">
+  <div class="hero-bg">
+    <div class="hero-gradient"></div>
+    <div class="hero-gradient-2"></div>
+    <div class="hero-particles" id="particles-container"></div>
+  </div>
+  <div class="hero-container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <div class="hero-badge-dot"></div>
+        Available for Internship &amp; Full-time
+      </div>
+      <h1 class="hero-title">Hi, I'm <span>Madhan Kumar</span></h1>
+      <div class="hero-typing-wrapper">
+        <span class="typing-text" id="typing-text"></span><span class="typing-cursor" aria-hidden="true"></span>
+      </div>
+      <p class="hero-description">
+        Passionate about Artificial Intelligence, Machine Learning, and Full Stack Development. I enjoy building real-world software solutions, learning modern technologies, and solving challenging problems. Currently seeking internship and full-time opportunities to contribute, learn, and grow as a software engineer.
+      </p>
+      <div class="hero-buttons">
+        <a href="resume.png" class="btn btn-primary" download id="download-resume-btn">
+          <i class="fas fa-download" aria-hidden="true"></i> Download Resume
+        </a>
+        <a href="#projects" class="btn btn-outline" id="view-projects-btn">
+          <i class="fas fa-code" aria-hidden="true"></i> View Projects
+        </a>
+        <a href="#contact" class="btn btn-ghost" id="contact-me-btn">
+          <i class="fas fa-envelope" aria-hidden="true"></i> Contact Me
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-number">5+</div>
+          <div class="stat-label">Projects Built</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">3+</div>
+          <div class="stat-label">Certifications</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">2027</div>
+          <div class="stat-label">Graduating</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image-section">
+      <div class="hero-image-wrapper">
+        <div class="hero-image-ring-2"></div>
+        <div class="hero-image-ring"></div>
+        <div class="hero-image-circle">
+          <img src="profile.jpg" alt="Madhan Kumar — AI/ML Engineer &amp; Full Stack Developer" loading="eager" />
+        </div>
+        <div class="floating-badge">
+          <div class="floating-badge-icon" style="background: rgba(37,99,235,0.12);">
+            <i class="fas fa-robot" style="color:#2563EB; font-size:14px;"></i>
+          </div>
+          <div>
+            <div style="font-size: 0.7rem; color: var(--text-muted); font-weight: 500;">AI/ML</div>
+            <div>Engineer</div>
+          </div>
+        </div>
+        <div class="floating-badge">
+          <div class="floating-badge-icon" style="background: rgba(96,165,250,0.12);">
+            <i class="fas fa-laptop-code" style="color:#3B82F6; font-size:13px;"></i>
+          </div>
+          <div>
+            <div style="font-size: 0.7rem; color: var(--text-muted); font-weight: 500;">Full Stack</div>
+            <div>Developer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" aria-labelledby="about-heading">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag"><i class="fas fa-user" aria-hidden="true"></i>&nbsp; About Me</div>
+      <h2 class="section-title" id="about-heading">Who Am <span>I?</span></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-image-col reveal-left">
+        <div class="about-accent"></div>
+        <div class="about-img-container">
+          <img src="profile.jpg" alt="Madhan Kumar" loading="lazy" />
+        </div>
+        <div class="about-accent-2"></div>
+      </div>
+      <div class="about-content reveal-right">
+        <h2>Passionate Builder &amp;<br><span class="text-primary">Lifelong Learner</span></h2>
+        <p class="about-text">
+          I am a Final Year Artificial Intelligence &amp; Machine Learning Engineering student passionate about building intelligent applications and scalable web solutions.
+        </p>
+        <p class="about-text">
+          I have experience working with Python, Java, JavaScript, React, Node.js, Machine Learning, SQL, and modern development tools. I enjoy learning new technologies, building projects, and continuously improving my problem-solving skills.
+        </p>
+        <p class="about-text">
+          I am looking for opportunities where I can contribute to meaningful projects while growing as a software engineer.
+        </p>
+        <div class="about-highlights">
+          <div class="highlight-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            AI / ML Development
+          </div>
+          <div class="highlight-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Full Stack Development
+          </div>
+          <div class="highlight-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Data Analysis &amp; SQL
+          </div>
+          <div class="highlight-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Problem Solving
+          </div>
+        </div>
+        <a href="#contact" class="btn btn-primary" id="about-contact-btn">
+          <i class="fas fa-envelope" aria-hidden="true"></i> Get In Touch
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" aria-labelledby="education-heading">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag"><i class="fas fa-graduation-cap" aria-hidden="true"></i>&nbsp; Education</div>
+      <h2 class="section-title" id="education-heading">Academic <span>Background</span></h2>
+      <p class="section-subtitle">My educational journey and academic achievements</p>
+      <div class="section-divider"></div>
+    </div>
+    <div class="education-grid">
+      <article class="glass-card edu-card reveal">
+        <div class="edu-card-header">
+          <div style="display: flex; align-items: center; gap: 16px;">
+            <div class="edu-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+              </svg>
+            </div>
+            <div>
+              <div class="edu-degree">Bachelor of Engineering</div>
+              <div class="edu-field">Artificial Intelligence &amp; Machine Learning</div>
+            </div>
+          </div>
+          <span class="edu-badge">Pursuing</span>
+        </div>
+        <div class="edu-college">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+          <strong>Sethu Institute of Technology</strong> — Virudhunagar, Tamil Nadu
+        </div>
+        <div class="edu-meta">
+          <div class="edu-meta-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+            Expected: 2027
+          </div>
+          <div class="edu-meta-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+            CGPA: 7.0 / 10
+          </div>
+        </div>
+        <div class="edu-coursework">
+          <div class="edu-coursework-title">Relevant Coursework</div>
+          <div class="edu-coursework-list">
+            <span class="course-tag">Machine Learning</span>
+            <span class="course-tag">Deep Learning</span>
+            <span class="course-tag">Natural Language Processing</span>
+            <span class="course-tag">Computer Vision</span>
+            <span class="course-tag">Data Structures &amp; Algorithms</span>
+            <span class="course-tag">Database Management</span>
+            <span class="course-tag">Full Stack Development</span>
+            <span class="course-tag">Python Programming</span>
+            <span class="course-tag">Object Oriented Programming</span>
+            <span class="course-tag">Operating Systems</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" aria-labelledby="skills-heading">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag"><i class="fas fa-code" aria-hidden="true"></i>&nbsp; Skills</div>
+      <h2 class="section-title" id="skills-heading">Technical <span>Skills</span></h2>
+      <p class="section-subtitle">A comprehensive overview of my technical capabilities</p>
+      <div class="section-divider"></div>
+    </div>
+    <div class="skills-grid" id="skills-grid">
+
+      <!-- Programming Languages -->
+      <div class="glass-card skill-category-card reveal delay-1">
+        <div class="skill-category-header">
+          <div class="skill-category-icon" style="background: rgba(37,99,235,0.1);">
+            <i class="fas fa-terminal" style="color:#2563EB;"></i>
+          </div>
+          <div class="skill-category-name">Programming Languages</div>
+        </div>
+        <div class="skill-items">
+          <div class="skill-item">
+            <div class="skill-item-header"><span class="skill-name">Python</span><span class="skill-percent">90%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-item-header"><span class="skill-name">Java</span><span class="skill-percent">75%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-item-header"><span class="skill-name">JavaScript</span><span class="skill-percent">82%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="82"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-item-header"><span class="skill-name">SQL</span><span class="skill-percent">78%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="78"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Frontend -->
+      <div class="glass-card skill-category-card reveal delay-2">
+        <div class="skill-category-header">
+          <div class="skill-category-icon" style="background: rgba(245,158,11,0.1);">
+            <i class="fas fa-palette" style="color:#D97706;"></i>
+          </div>
+          <div class="skill-category-name">Frontend Development</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">HTML5</span>
+          <span class="skill-tag">CSS3</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">React.js</span>
+          <span class="skill-tag">Tailwind CSS</span>
+          <span class="skill-tag">Responsive Design</span>
+        </div>
+      </div>
+
+      <!-- Backend -->
+      <div class="glass-card skill-category-card reveal delay-3">
+        <div class="skill-category-header">
+          <div class="skill-category-icon" style="background: rgba(34,197,94,0.1);">
+            <i class="fas fa-server" style="color:#16A34A;"></i>
+          </div>
+          <div class="skill-category-name">Backend Development</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">Express.js</span>
+          <span class="skill-tag">REST APIs</span>
+          <span class="skill-tag">Flask</span>
+          <span class="skill-tag">FastAPI</span>
+        </div>
+      </div>
+
+      <!-- AI -->
+      <div class="glass-card skill-category-card reveal delay-1">
+        <div class="skill-category-header">
+          <div class="skill-category-icon" style="background: rgba(168,85,247,0.1);">
+            <i class="fas fa-robot" style="color:#9333EA;"></i>
+          </div>
+          <div class="skill-category-name">Artificial Intelligence</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Machine Learning</span>
+          <span class="skill-tag">Deep Learning</span>
+          <span class="skill-tag">NLP</span>
+          <span class="skill-tag">Computer Vision</span>
+          <span class="skill-tag">TensorFlow</span>
+          <span class="skill-tag">Scikit-learn</span>
+          <span class="skill-tag">Prompt Engineering</span>
+        </div>
+      </div>
+
+      <!-- Database -->
+      <div class="glass-card skill-category-card reveal delay-2">
+        <div class="skill-category-header">
+          <div class="skill-category-icon" style="background: rgba(239,68,68,0.1);">
+            <i class="fas fa-database" style="color:#DC2626;"></i>
+          </div>
+          <div class="skill-category-name">Database</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">MongoDB</span>
+          <span class="skill-tag">Firebase</span>
+          <span class="skill-tag">SQLite</span>
+          <span class="skill-tag">PostgreSQL</span>
+        </div>
+      </div>
+
+      <!-- Tools -->
+      <div class="glass-card skill-category-card reveal delay-3">
+        <div class="skill-category-header">
+          <div class="skill-category-icon" style="background: rgba(20,184,166,0.1);">
+            <i class="fas fa-tools" style="color:#0D9488;"></i>
+          </div>
+          <div class="skill-category-name">Tools &amp; Technologies</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">GitHub</span>
+          <span class="skill-tag">VS Code</span>
+          <span class="skill-tag">Postman</span>
+          <span class="skill-tag">Figma</span>
+          <span class="skill-tag">Jupyter</span>
+          <span class="skill-tag">Docker</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" aria-labelledby="projects-heading">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag"><i class="fas fa-folder-open" aria-hidden="true"></i>&nbsp; Projects</div>
+      <h2 class="section-title" id="projects-heading">Featured <span>Projects</span></h2>
+      <p class="section-subtitle">Real-world applications I've built with passion and purpose</p>
+      <div class="section-divider"></div>
+    </div>
+    <div class="projects-filter" role="group" aria-label="Filter projects by category">
+      <button class="filter-btn active" data-filter="all" id="filter-all">All Projects</button>
+      <button class="filter-btn" data-filter="ai" id="filter-ai">AI / ML</button>
+      <button class="filter-btn" data-filter="web" id="filter-web">Full Stack</button>
+      <button class="filter-btn" data-filter="data" id="filter-data">Data</button>
+    </div>
+    <div class="projects-grid" id="projects-grid">
+
+      <article class="glass-card project-card reveal" data-category="ai" id="project-career-planner">
+        <div class="project-image" style="background: linear-gradient(135deg,#EFF6FF,#DBEAFE);">
+          <i class="fas fa-bullseye project-image-icon" style="font-size:56px;color:#2563EB;opacity:0.5;"></i>
+          <div class="project-image-overlay"></div>
+          <span class="project-badge">AI / ML</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-title">AI Career Planner</h3>
+          <p class="project-description">An AI-powered platform that recommends career paths, required skills, learning resources, and interview preparation based on user interests and goals.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span><span class="tech-tag">React</span><span class="tech-tag">NLP</span><span class="tech-tag">Node.js</span><span class="tech-tag">MongoDB</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link project-link-github" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://ai-career-planner-lk.vercel.app/" class="project-link project-link-demo" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="glass-card project-card reveal delay-1" data-category="web" id="project-flames">
+        <div class="project-image" style="background: linear-gradient(135deg,#FFF1F2,#FFE4E6);">
+          <i class="fas fa-fire project-image-icon" style="font-size:56px;color:#F43F5E;opacity:0.55;"></i>
+          <div class="project-image-overlay"></div>
+          <span class="project-badge" style="background:#F43F5E;">Web App</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-title">FLAMES 1.0</h3>
+          <p class="project-description">A fun and interactive FLAMES relationship prediction game built with a clean UI, smooth animations, and engaging user experience.</p>
+          <div class="project-tech">
+            <span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Vercel</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link project-link-github" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://flames-1-0.vercel.app/" class="project-link project-link-demo" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="glass-card project-card reveal delay-2" data-category="ai" id="project-aptitude-trainer">
+        <div class="project-image" style="background: linear-gradient(135deg,#FDF4FF,#F3E8FF);">
+          <i class="fas fa-brain project-image-icon" style="font-size:56px;color:#9333EA;opacity:0.5;"></i>
+          <div class="project-image-overlay"></div>
+          <span class="project-badge">AI / ML</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-title">AI Aptitude Trainer</h3>
+          <p class="project-description">Adaptive aptitude learning platform with personalized questions, real-time analytics, and progress tracking powered by machine learning.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span><span class="tech-tag">ML</span><span class="tech-tag">React</span><span class="tech-tag">FastAPI</span><span class="tech-tag">MySQL</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link project-link-github" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+            <a href="#" class="project-link project-link-demo" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="glass-card project-card reveal" data-category="web" id="project-student-management">
+        <div class="project-image" style="background: linear-gradient(135deg,#FFFBEB,#FEF3C7);">
+          <i class="fas fa-user-graduate project-image-icon" style="font-size:56px;color:#D97706;opacity:0.5;"></i>
+          <div class="project-image-overlay"></div>
+          <span class="project-badge">Full Stack</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-title">Student Management System</h3>
+          <p class="project-description">A comprehensive web application for managing student records, attendance tracking, and academic performance with an intuitive dashboard.</p>
+          <div class="project-tech">
+            <span class="tech-tag">React</span><span class="tech-tag">Node.js</span><span class="tech-tag">Express</span><span class="tech-tag">MySQL</span><span class="tech-tag">Tailwind</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link project-link-github" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+            <a href="#" class="project-link project-link-demo" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="glass-card project-card reveal delay-1" data-category="web" id="project-profit-calculator">
+        <div class="project-image" style="background: linear-gradient(135deg,#F0FDF4,#DCFCE7);">
+          <i class="fas fa-calculator project-image-icon" style="font-size:56px;color:#16A34A;opacity:0.55;"></i>
+          <div class="project-image-overlay"></div>
+          <span class="project-badge" style="background:#16A34A;">Web App</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-title">Profit Calculator</h3>
+          <p class="project-description">A clean and responsive profit calculator web app for computing profit, loss, percentage, and business metrics with an intuitive interface.</p>
+          <div class="project-tech">
+            <span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">GitHub Pages</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/madhankumarbala2k-afk/ProfiCalc" class="project-link project-link-github" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://madhankumarbala2k-afk.github.io/ProfiCalc/" class="project-link project-link-demo" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications" aria-labelledby="certifications-heading">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag"><i class="fas fa-certificate" aria-hidden="true"></i>&nbsp; Certifications</div>
+      <h2 class="section-title" id="certifications-heading">My <span>Certifications</span></h2>
+      <p class="section-subtitle">Professional certifications validating my technical expertise</p>
+      <div class="section-divider"></div>
+    </div>
+    <div class="cert-grid">
+
+      <div class="glass-card cert-card reveal" id="cert-python">
+        <div class="cert-icon-wrapper" style="background: rgba(37,99,235,0.1);">
+          <i class="fab fa-python" style="font-size:24px;color:#2563EB;"></i>
+        </div>
+        <div>
+          <div class="cert-title">Basics of Python</div>
+          <div class="cert-issuer">
+            <i class="fas fa-building" aria-hidden="true" style="color:var(--primary);"></i>
+            Infosys Springboard
+          </div>
+        </div>
+        <div class="cert-meta">
+          <span class="cert-year"><i class="fas fa-calendar-alt" style="color:var(--primary);"></i> September 17, 2025</span>
+        </div>
+        <a href="https://verify.onwingspan.com" class="cert-verify" target="_blank" rel="noopener noreferrer">
+          <i class="fas fa-external-link-alt"></i> Verify Certificate
+        </a>
+      </div>
+
+      <div class="glass-card cert-card reveal delay-1" id="cert-java-codechef">
+        <div class="cert-icon-wrapper" style="background: rgba(139,90,43,0.12);">
+          <i class="fab fa-java" style="font-size:24px;color:#8B5A2B;"></i>
+        </div>
+        <div>
+          <div class="cert-title">Learn Java <span class="cert-pro-badge">PRO</span></div>
+          <div class="cert-issuer">
+            <i class="fas fa-building" aria-hidden="true" style="color:var(--primary);"></i>
+            CodeChef
+          </div>
+        </div>
+        <div class="cert-meta">
+          <span class="cert-year"><i class="fas fa-calendar-alt" style="color:var(--primary);"></i> February 5, 2026</span>
+          <span class="cert-year"><i class="fas fa-medal" style="color:#D97706;"></i> ID: eecd686</span>
+        </div>
+        <a href="https://www.codechef.com/certificates/verify" class="cert-verify" target="_blank" rel="noopener noreferrer">
+          <i class="fas fa-external-link-alt"></i> Verify Certificate
+        </a>
+      </div>
+
+      <div class="glass-card cert-card reveal delay-2" id="cert-java-infosys">
+        <div class="cert-icon-wrapper" style="background: rgba(0,112,188,0.1);">
+          <i class="fab fa-java" style="font-size:24px;color:#0070BC;"></i>
+        </div>
+        <div>
+          <div class="cert-title">Programming using Java</div>
+          <div class="cert-issuer">
+            <i class="fas fa-building" aria-hidden="true" style="color:var(--primary);"></i>
+            Infosys Springboard
+          </div>
+        </div>
+        <div class="cert-meta">
+          <span class="cert-year"><i class="fas fa-calendar-alt" style="color:var(--primary);"></i> December 2, 2024</span>
+        </div>
+        <a href="https://verify.onwingspan.com" class="cert-verify" target="_blank" rel="noopener noreferrer">
+          <i class="fas fa-external-link-alt"></i> Verify Certificate
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements" aria-labelledby="achievements-heading">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag"><i class="fas fa-trophy" aria-hidden="true"></i>&nbsp; Achievements</div>
+      <h2 class="section-title" id="achievements-heading">My <span>Achievements</span></h2>
+      <p class="section-subtitle">Milestones and accomplishments in my journey</p>
+      <div class="section-divider"></div>
+    </div>
+    <div class="achievements-grid">
+      <div class="glass-card achievement-card reveal" id="achievement-projects">
+        <div class="achievement-icon-wrapper"><i class="fas fa-rocket" style="font-size:32px;color:var(--primary);"></i></div>
+        <h3 class="achievement-title">Multiple AI Projects</h3>
+        <p class="achievement-desc">Built 5+ AI and Full Stack projects solving real-world problems from career planning to resume analysis.</p>
+      </div>
+      <div class="glass-card achievement-card reveal delay-1" id="achievement-problem-solving">
+        <div class="achievement-icon-wrapper"><i class="fas fa-puzzle-piece" style="font-size:32px;color:var(--primary);"></i></div>
+        <h3 class="achievement-title">Problem Solving</h3>
+        <p class="achievement-desc">Strong analytical and problem-solving skills developed through competitive programming and academic challenges.</p>
+      </div>
+      <div class="glass-card achievement-card reveal delay-2" id="achievement-learning">
+        <div class="achievement-icon-wrapper"><i class="fas fa-book-open" style="font-size:32px;color:var(--primary);"></i></div>
+        <h3 class="achievement-title">Continuous Learning</h3>
+        <p class="achievement-desc">Passionate about staying current with the latest AI/ML advancements, frameworks, and industry best practices.</p>
+      </div>
+      <div class="glass-card achievement-card reveal delay-3" id="achievement-team">
+        <div class="achievement-icon-wrapper"><i class="fas fa-users" style="font-size:32px;color:var(--primary);"></i></div>
+        <h3 class="achievement-title">Team Player</h3>
+        <p class="achievement-desc">Collaborative team player with experience working in agile environments and contributing to group projects.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CODING PROFILES -->
+<section id="coding-profiles" aria-labelledby="profiles-heading">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag"><i class="fas fa-terminal" aria-hidden="true"></i>&nbsp; Coding Profiles</div>
+      <h2 class="section-title" id="profiles-heading">Find Me <span>Online</span></h2>
+      <p class="section-subtitle">Connect with me on these platforms to see my coding activity</p>
+      <div class="section-divider"></div>
+    </div>
+    <div class="profiles-grid">
+
+      <a href="https://github.com/madhankumarbala2k-afk" target="_blank" rel="noopener noreferrer" class="glass-card profile-card reveal" id="profile-github" aria-label="GitHub profile">
+        <div class="profile-icon" style="background:rgba(0,0,0,0.08);">
+          <i class="fab fa-github" style="font-size:28px;" aria-hidden="true"></i>
+        </div>
+        <div class="profile-name">GitHub</div>
+        <div class="profile-username">@madhankumarbala2k-afk</div>
+        <div class="profile-action"><i class="fas fa-arrow-right"></i> View Profile</div>
+      </a>
+
+      <a href="https://www.linkedin.com/in/madhan-kumar-056ba3299/" target="_blank" rel="noopener noreferrer" class="glass-card profile-card reveal delay-1" id="profile-linkedin" aria-label="LinkedIn profile">
+        <div class="profile-icon" style="background:rgba(10,102,194,0.1);">
+          <i class="fab fa-linkedin" style="font-size:28px;color:#0A66C2;" aria-hidden="true"></i>
+        </div>
+        <div class="profile-name">LinkedIn</div>
+        <div class="profile-username">@madhan-kumar-056ba3299</div>
+        <div class="profile-action"><i class="fas fa-arrow-right"></i> Connect</div>
+      </a>
+
+      <a href="https://leetcode.com/u/madhan_71771/" target="_blank" rel="noopener noreferrer" class="glass-card profile-card reveal delay-2" id="profile-leetcode" aria-label="LeetCode profile">
+        <div class="profile-icon" style="background:rgba(255,161,22,0.1);">
+          <i class="fas fa-code" style="font-size:28px;color:#FFA116;" aria-hidden="true"></i>
+        </div>
+        <div class="profile-name">LeetCode</div>
+        <div class="profile-username">@madhan_71771</div>
+        <div class="profile-action"><i class="fas fa-arrow-right"></i> View Profile</div>
+      </a>
+
+      <a href="https://www.hackerrank.com/profile/madhankumarbala1" target="_blank" rel="noopener noreferrer" class="glass-card profile-card reveal delay-3" id="profile-hackerrank" aria-label="HackerRank profile">
+        <div class="profile-icon" style="background:rgba(0,166,90,0.1);">
+          <i class="fab fa-hackerrank" style="font-size:28px;color:#00A05A;" aria-hidden="true"></i>
+        </div>
+        <div class="profile-name">HackerRank</div>
+        <div class="profile-username">@madhankumarbala1</div>
+        <div class="profile-action"><i class="fas fa-arrow-right"></i> View Profile</div>
+      </a>
+
+      <a href="https://www.codechef.com/users/sethu_116022" target="_blank" rel="noopener noreferrer" class="glass-card profile-card reveal delay-4" id="profile-codechef" aria-label="CodeChef profile">
+        <div class="profile-icon" style="background:rgba(98,62,16,0.1);">
+          <i class="fas fa-laptop-code" style="font-size:26px;color:#6E3E10;" aria-hidden="true"></i>
+        </div>
+        <div class="profile-name">CodeChef</div>
+        <div class="profile-username">@sethu_116022</div>
+        <div class="profile-action"><i class="fas fa-arrow-right"></i> View Profile</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- SOFT SKILLS -->
+<section id="soft-skills" aria-labelledby="soft-skills-heading">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag"><i class="fas fa-heart" aria-hidden="true"></i>&nbsp; Soft Skills</div>
+      <h2 class="section-title" id="soft-skills-heading">Beyond the <span>Code</span></h2>
+      <p class="section-subtitle">The human skills that make me an effective team member</p>
+      <div class="section-divider"></div>
+    </div>
+    <div class="soft-skills-grid">
+      <div class="glass-card soft-skill-card reveal" id="soft-skill-problem-solving">
+        <div class="soft-skill-icon"><i class="fas fa-puzzle-piece" style="font-size:36px;color:var(--primary);"></i></div>
+        <div class="soft-skill-name">Problem Solving</div>
+        <div class="soft-skill-desc">Breaking down complex challenges into manageable, elegant solutions.</div>
+      </div>
+      <div class="glass-card soft-skill-card reveal delay-1" id="soft-skill-communication">
+        <div class="soft-skill-icon"><i class="fas fa-comments" style="font-size:36px;color:var(--primary);"></i></div>
+        <div class="soft-skill-name">Communication</div>
+        <div class="soft-skill-desc">Clearly conveying technical concepts to both technical and non-technical audiences.</div>
+      </div>
+      <div class="glass-card soft-skill-card reveal delay-2" id="soft-skill-leadership">
+        <div class="soft-skill-icon"><i class="fas fa-star" style="font-size:36px;color:#F59E0B;"></i></div>
+        <div class="soft-skill-name">Leadership</div>
+        <div class="soft-skill-desc">Taking initiative and guiding teams toward achieving shared goals effectively.</div>
+      </div>
+      <div class="glass-card soft-skill-card reveal delay-3" id="soft-skill-teamwork">
+        <div class="soft-skill-icon"><i class="fas fa-hands-helping" style="font-size:36px;color:var(--primary);"></i></div>
+        <div class="soft-skill-name">Teamwork</div>
+        <div class="soft-skill-desc">Collaborating effectively with diverse teams to deliver high-quality outcomes.</div>
+      </div>
+      <div class="glass-card soft-skill-card reveal delay-1" id="soft-skill-critical-thinking">
+        <div class="soft-skill-icon"><i class="fas fa-bullseye" style="font-size:36px;color:#EF4444;"></i></div>
+        <div class="soft-skill-name">Critical Thinking</div>
+        <div class="soft-skill-desc">Analyzing situations deeply to make informed, logical decisions.</div>
+      </div>
+      <div class="glass-card soft-skill-card reveal delay-2" id="soft-skill-adaptability">
+        <div class="soft-skill-icon"><i class="fas fa-sync-alt" style="font-size:36px;color:var(--primary);"></i></div>
+        <div class="soft-skill-name">Adaptability</div>
+        <div class="soft-skill-desc">Quickly adjusting to new technologies, requirements, and environments.</div>
+      </div>
+      <div class="glass-card soft-skill-card reveal delay-3" id="soft-skill-time-management">
+        <div class="soft-skill-icon"><i class="fas fa-clock" style="font-size:36px;color:#6366F1;"></i></div>
+        <div class="soft-skill-name">Time Management</div>
+        <div class="soft-skill-desc">Efficiently prioritizing tasks and meeting deadlines consistently.</div>
+      </div>
+      <div class="glass-card soft-skill-card reveal delay-4" id="soft-skill-quick-learning">
+        <div class="soft-skill-icon"><i class="fas fa-bolt" style="font-size:36px;color:#F59E0B;"></i></div>
+        <div class="soft-skill-name">Quick Learning</div>
+        <div class="soft-skill-desc">Rapidly mastering new concepts, tools, and frameworks with enthusiasm.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" aria-labelledby="contact-heading">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-tag"><i class="fas fa-envelope" aria-hidden="true"></i>&nbsp; Contact</div>
+      <h2 class="section-title" id="contact-heading">Let's <span>Connect</span></h2>
+      <p class="section-subtitle">Have an opportunity or project in mind? I'd love to hear from you.</p>
+      <div class="section-divider"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal-left">
+        <p class="contact-intro">
+          I'm currently open to internship and full-time opportunities in AI/ML engineering, full stack development, and data analysis. Whether you have a project, an opportunity, or just want to say hello — my inbox is always open!
+        </p>
+        <div class="contact-items">
+          <a href="mailto:your.email@example.com" class="contact-item" id="contact-email">
+            <div class="contact-item-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div>
+              <div class="contact-item-label">Email</div>
+              <div class="contact-item-value">madhankumarbala2k@gmail.com</div>
+            </div>
+          </a>
+          <a href="tel:+91XXXXXXXXXX" class="contact-item" id="contact-phone">
+            <div class="contact-item-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.53 3.17 2 2 0 0 1 3.5 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="contact-item-label">Phone</div>
+              <div class="contact-item-value">+91 74490 71771</div>
+            </div>
+          </a>
+          <div class="contact-item" id="contact-location">
+            <div class="contact-item-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div>
+              <div class="contact-item-label">Location</div>
+              <div class="contact-item-value">Tamil Nadu, India</div>
+            </div>
+          </div>
+          <a href="https://www.linkedin.com/in/madhan-kumar-056ba3299/" target="_blank" rel="noopener noreferrer" class="contact-item" id="contact-linkedin">
+            <div class="contact-item-icon">
+              <i class="fab fa-linkedin" style="font-size:20px;color:var(--primary);" aria-hidden="true"></i>
+            </div>
+            <div>
+              <div class="contact-item-label">LinkedIn</div>
+              <div class="contact-item-value">linkedin.com/in/madhan-kumar-056ba3299</div>
+            </div>
+          </a>
+          <a href="https://github.com/madhankumarbala2k-afk" target="_blank" rel="noopener noreferrer" class="contact-item" id="contact-github">
+            <div class="contact-item-icon">
+              <i class="fab fa-github" style="font-size:20px;color:var(--primary);" aria-hidden="true"></i>
+            </div>
+            <div>
+              <div class="contact-item-label">GitHub</div>
+              <div class="contact-item-value">github.com/madhankumarbala2k-afk</div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <div class="contact-form-wrapper">
+          <h3 class="contact-form-title">Send Me a Message</h3>
+          <form id="contact-form" novalidate aria-label="Contact form">
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="form-name">Full Name *</label>
+                <input class="form-input" type="text" id="form-name" name="name" placeholder="Your full name" required autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="form-email">Email Address *</label>
+                <input class="form-input" type="email" id="form-email" name="email" placeholder="your@email.com" required autocomplete="email" />
+              </div>
+              <div class="form-group full">
+                <label class="form-label" for="form-subject">Subject *</label>
+                <input class="form-input" type="text" id="form-subject" name="subject" placeholder="How can I help you?" required />
+              </div>
+              <div class="form-group full">
+                <label class="form-label" for="form-message">Message *</label>
+                <textarea class="form-textarea" id="form-message" name="message" placeholder="Tell me about your project or opportunity..." required></textarea>
+              </div>
+            </div>
+            <button type="submit" class="form-submit" id="form-submit-btn">
+              <i class="fas fa-paper-plane" aria-hidden="true"></i> Send Message
+            </button>
+            <div class="form-success" id="form-success" role="status" aria-live="polite">
+              <i class="fas fa-check-circle" aria-hidden="true"></i>
+              Message sent successfully! I'll get back to you soon.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-logo">Madhan<span>Kumar</span></div>
+    <p class="footer-tagline">AI/ML Engineer &middot; Full Stack Developer &middot; Problem Solver</p>
+    <div class="footer-links" role="list">
+      <a href="#home" class="footer-link" role="listitem">Home</a>
+      <a href="#about" class="footer-link" role="listitem">About</a>
+      <a href="#skills" class="footer-link" role="listitem">Skills</a>
+      <a href="#projects" class="footer-link" role="listitem">Projects</a>
+      <a href="#certifications" class="footer-link" role="listitem">Certifications</a>
+      <a href="#contact" class="footer-link" role="listitem">Contact</a>
+    </div>
+    <div class="footer-social" aria-label="Social media links">
+      <a href="https://github.com/madhankumarbala2k-afk" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/madhan-kumar-056ba3299/" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+      </a>
+      <a href="https://leetcode.com/u/madhan_71771/" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="LeetCode">
+        <i class="fas fa-code" aria-hidden="true"></i>
+      </a>
+      <a href="https://www.codechef.com/users/sethu_116022" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="CodeChef">
+        <i class="fas fa-laptop-code" aria-hidden="true"></i>
+      </a>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 <span>Madhan Kumar</span>. All rights reserved.</p>
+      <p>Designed &amp; Developed with <span style="color:#EF4444;">&#10084;</span> by Madhan Kumar</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top -->
+<button id="back-to-top" aria-label="Back to top">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <polyline points="18 15 12 9 6 15"/>
+  </svg>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>

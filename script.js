@@ -324,35 +324,34 @@ const qsa = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
       return;
     }
 
-    // Real submission via Web3Forms (emails go directly to madhankumarbala2k@gmail.com)
+    // Real submission via FormSubmit.co (Zero-config, sends directly to your email!)
     submitBtn.disabled = true;
     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
 
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
+      const response = await fetch('https://formsubmit.co/ajax/madhankumarbala2k@gmail.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          access_key: "YOUR_WEB3FORMS_ACCESS_KEY", // Get your free access key at https://web3forms.com
           name: name,
           email: email,
           subject: subject,
           message: message,
-          from_name: "Madhan Kumar Portfolio Contact"
+          _subject: `New Portfolio Message: ${subject}`
         })
       });
 
       const json = await response.json();
       
-      if (response.status === 200 || json.success) {
+      if (response.ok || json.success === 'true' || json.success === true) {
         submitBtn.innerHTML = '<i class="fas fa-check"></i> Sent!';
         submitBtn.style.background = '#16A34A';
         if (successMsg) {
           successMsg.style.display = 'flex';
-          successMsg.innerHTML = '<i class="fas fa-check-circle" aria-hidden="true"></i> Message sent successfully! I will get back to you soon.';
+          successMsg.innerHTML = '<i class="fas fa-check-circle" aria-hidden="true"></i> Message sent! First-time users: please check your email inbox to confirm/activate the form.';
           successMsg.style.color = '#155724';
         }
         form.reset();

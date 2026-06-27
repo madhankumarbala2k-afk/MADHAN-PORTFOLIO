@@ -324,27 +324,60 @@ const qsa = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
       return;
     }
 
-    // Simulate send (replace with real FormSpree/EmailJS endpoint)
+    // Real submission via Web3Forms (emails go directly to madhankumarbala2k@gmail.com)
     submitBtn.disabled = true;
     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
 
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: "YOUR_WEB3FORMS_ACCESS_KEY", // Get your free access key at https://web3forms.com
+          name: name,
+          email: email,
+          subject: subject,
+          message: message,
+          from_name: "Madhan Kumar Portfolio Contact"
+        })
+      });
 
-    submitBtn.innerHTML = '<i class="fas fa-check"></i> Sent!';
-    submitBtn.style.background = '#16A34A';
-
-    if (successMsg) {
-      successMsg.style.display = 'flex';
+      const json = await response.json();
+      
+      if (response.status === 200 || json.success) {
+        submitBtn.innerHTML = '<i class="fas fa-check"></i> Sent!';
+        submitBtn.style.background = '#16A34A';
+        if (successMsg) {
+          successMsg.style.display = 'flex';
+          successMsg.innerHTML = '<i class="fas fa-check-circle" aria-hidden="true"></i> Message sent successfully! I will get back to you soon.';
+          successMsg.style.color = '#155724';
+        }
+        form.reset();
+      } else {
+        throw new Error(json.message || "Failed to submit form.");
+      }
+    } catch (err) {
+      submitBtn.innerHTML = '<i class="fas fa-times"></i> Error';
+      submitBtn.style.background = '#EF4444';
+      if (successMsg) {
+        successMsg.style.display = 'flex';
+        successMsg.innerHTML = `<i class="fas fa-times-circle" aria-hidden="true"></i> Error: ${err.message || 'Something went wrong.'}`;
+        successMsg.style.color = '#721C24';
+      }
     }
-
-    form.reset();
 
     setTimeout(() => {
       submitBtn.disabled = false;
       submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
       submitBtn.style.background = '';
-      if (successMsg) successMsg.style.display = 'none';
-    }, 4000);
+      if (successMsg) {
+        successMsg.style.display = 'none';
+        successMsg.style.color = '';
+      }
+    }, 5000);
   });
 
   // Real-time email validation feedback
@@ -546,6 +579,6 @@ console.log(
   'font-size:14px;color:#334155;'
 );
 console.log(
-  '%c📧 Contact: your.email@example.com',
+  '%c📧 Contact: madhankumarbala2k@gmail.com',
   'font-size:13px;color:#64748B;'
 );
